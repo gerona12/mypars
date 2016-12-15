@@ -3,49 +3,46 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"/research/research"
+	"/subtype/ResearchSubtype"
+	"/type/ResearchType"
+	"view/ResearchView"
 )
  
-type ResearchType struct {
-	Title string
-}
 
-type ResearchSubtype struct{
-	Title string
-}
-
-type ResearchView struct{
-	Number int16
-	Price int16
-}
-
-type Research struct{
-	Description string
-	Preparation string
-	Indication string
-	Result string 
-}
 
 func GetResearches(w http.ResponseWriter, r *http.Request) {
-	entity := Research{"description", "preparation", "indication", "result"}
- 
+		var entity [3] Research
+		entity[0] = Research{"description", "preparation", "indication", "result"}
+ 		entity[1] = Research{"description", "preparation", "indication", "result"}
+ 		entity[2] = Research{"description", "preparation", "indication", "result"}
 	serializeObject2Json(entity, w, r)
 }
 
 func GetResearchTypes(w http.ResponseWriter, r *http.Request) {
-	entity := ResearchType{"title"}
- 
+	
+ 	var entity [3] ResearchType
+	entity[0] = ResearchType{"title1"}
+	entity[1] = ResearchType{"title2"}
+ 	entity[2] = ResearchType{"title3"}
+	
 	serializeObject2Json(entity, w, r)
 }
 
 func GetResearchSubtypes(w http.ResponseWriter, r *http.Request) {
-	entity := ResearchSubtype{"title"}
- 
+	var entity [3] ResearchSubtype
+	entity[0] = ResearchSubtype{"Title1"}
+	entity[1] = ResearchSubtype{"Title2"}
+ 	entity[2] = ResearchSubtype{"Title3"}
+	
 	serializeObject2Json(entity, w, r)
 }
 
 func GetResearchViews(w http.ResponseWriter, r *http.Request) {
-	entity := ResearchView{111, 22}
- 
+    var entity [3] ResearchView
+	entity[0] = ResearchView{111, 22}
+	entity[1] = ResearchView{222, 45}
+ 	entity[2] = ResearchView{333, 88}
 	serializeObject2Json(entity, w, r)
 }
 
