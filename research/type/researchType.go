@@ -1,4 +1,4 @@
-type ResearchView struct{
-	Number int16
-	Price int16
+package researchType
+type ResearchType struct{
+	Title string
 }
