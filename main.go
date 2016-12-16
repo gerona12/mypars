@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/json"
 	"net/http"
-	"/research/research"
-	"/subtype/ResearchSubtype"
-	"/type/ResearchType"
-	"view/ResearchView"
+	"parser/research/"
+	"parser/research/subtype/"
+	"parser/research/type/"
+	"parser/research/view/"
 )
  
 
@@ -28,6 +28,10 @@ func GetResearchTypes(w http.ResponseWriter, r *http.Request) {
 	
 	serializeObject2Json(entity, w, r)
 }
+
+
+
+
 
 func GetResearchSubtypes(w http.ResponseWriter, r *http.Request) {
 	var entity [3] ResearchSubtype
