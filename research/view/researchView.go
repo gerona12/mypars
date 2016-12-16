@@ -1,6 +1,5 @@
-type Research struct{
-	Description string
-	Preparation string
-	Indication string
-	Result string 
+package researchView
+type ResearchView struct{
+	Number int16
+	Price int16
 }
