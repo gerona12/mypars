@@ -6,7 +6,7 @@ import (
 	"parser/research/"
 	"parser/research/subtype/"
 	"parser/research/type/"
-	"//parser/research/view/"
+	"parser/research/view/"
 )
  
 
