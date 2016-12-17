@@ -32,7 +32,7 @@ func GetResearchTypes(w http.ResponseWriter, r *http.Request) {
 	entity[1] = researchType.ResearchType{"title2"}
  	entity[2] = researchType.ResearchType{"title3"}
 	*/
-	serializeObject2Json(researchType.ResearchDao.FindAll(), w, r)
+	serializeObject2Json(researchType.FindAll(), w, r)
 }
 
 
@@ -45,7 +45,7 @@ func GetResearchSubtypes(w http.ResponseWriter, r *http.Request) {
 	entity[1] = researchSubtype.ResearchSubtype{"Title2"}
  	entity[2] = researchSubtype.ResearchSubtype{"Title3"}
 	*/
-	serializeObject2Json(researchSubtype.ResearchDao.FindAll(), w, r)
+	serializeObject2Json(researchSubtype.FindAll(), w, r)
 }
 
 func GetResearchViews(w http.ResponseWriter, r *http.Request) {
@@ -54,11 +54,7 @@ func GetResearchViews(w http.ResponseWriter, r *http.Request) {
 	entity[1] = researchView.ResearchView{222, 45}
  	entity[2] = researchView.ResearchView{333, 88}
 	*/
-	serializeObject2Json(researchView.ResearchDao.FindAll(), w, r)
-}
-type ResearchDao interface{
-
-	Create()
+	serializeObject2Json(researchView.FindAll(), w, r)
 }
 
 func serializeObject2Json(obj interface{}, w http.ResponseWriter, r *http.Request) {
